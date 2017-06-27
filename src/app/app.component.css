@@ -1,0 +1,54 @@
+.small-icon {
+    width: auto;
+    height: auto;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .item {
+    flex: 0 0 10%;
+    box-sizing: border-box;
+}
+
+.selected-icon {
+    border: 5px solid royalblue;
+}
+
+.pages>* {
+    display: inline;
+}
+
+button {
+    color: #fff;
+    background-color: #6496c8;
+    text-shadow: -1px 1px #417cb8;
+    border: none;
+    min-width: 40px;
+    height: 40px;
+}
+
+.print-container {
+    text-align: center;
+}
+
+.print-item {
+    width: 45%;
+    display: inline-block;
+    border: 1px solid black;
+    box-sizing: border-box;
+    /*page-break-inside: always;
+    page-break-before: always;
+    page-break-after: always;*/
+    /*position: relative;*/
+}
+
+@media print {
+    .print-hide {
+        display: none;
+    }
+}

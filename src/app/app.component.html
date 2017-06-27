@@ -1,0 +1,30 @@
+<!--The whole content below can be removed with the new code.-->
+<div *ngIf="!printVisible">
+    <div class="pages">
+        <button (click)="setPage(pageNumber - 1)"><<</button>
+        <div>{{pageNumber}}</div>
+        <button (click)="setPage(pageNumber + 1)">>></button>
+        <button (click)="selectAll()">Select all</button>
+        <button (click)="selectNone()">Select none</button>
+
+    </div>
+    <div class="container">
+        <div class="item" *ngFor="let icon of pagedItems; let i = index" [ngClass]="{'selected-icon': icon.selected}" (click)="selectItem(icon)">
+            <img class="small-icon" src="{{getIconUrl(icon)}} " />
+        </div>
+    </div>
+</div>
+
+
+<button *ngIf="!printVisible" (click)="show()">Generate </button>
+<!--<textarea name="Text1" cols="40" rows="5" [(value)]="result"></textarea>-->
+
+<button (click)="print()" *ngIf="printVisible" class="print-hide">Print this page</button>
+<button (click)="back()" *ngIf="printVisible" class="print-hide">Back</button>
+<div *ngIf="printVisible">
+    <div class="print-container">
+        <div class="print-item break-after" *ngFor="let icon of choosenIcons;">
+            <img class="small-icon" src="{{getIconUrl(icon)}} " />
+        </div>
+    </div>
+</div>
